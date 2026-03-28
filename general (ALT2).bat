@@ -12,8 +12,8 @@ set BIN=%~dp0bin\
 start "zapret: general" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=443,50000-65535 ^
 --filter-udp=50000-65535 --dpi-desync=fake --dpi-desync-any-protocol --dpi-desync-repeats=11 --new ^
 --filter-tcp=443 --hostlist="list-discord.txt" --dpi-desync=fake,split --dpi-desync-autottl=2 --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" --new ^
---filter-tcp=80,443 --ipset="ipset-telegram.txt" --dpi-desync=split2 --dpi-desync-any-protocol --dpi-desync-split-pos=2 --new ^
---filter-udp=443 --ipset="ipset-telegram.txt" --dpi-desync=fake --dpi-desync-any-protocol --dpi-desync-repeats=6 --new ^
+--filter-tcp=80,443 --ipset="ipset-telegram.txt" --dpi-desync=disorder --new ^
+--filter-udp=443 --ipset="ipset-telegram.txt" --dpi-desync=fake --dpi-desync-repeats=1 --new ^
 --filter-tcp=80,443 --hostlist="list-telegram.txt" --dpi-desync=fake,split --dpi-desync-autottl=2 --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" --new ^
 --filter-udp=443 --hostlist="list-general.txt" --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
 --filter-tcp=80 --hostlist="list-general.txt" --dpi-desync=fake,split2 --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
